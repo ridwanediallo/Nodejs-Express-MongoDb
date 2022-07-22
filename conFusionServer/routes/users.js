@@ -1,6 +1,6 @@
 var express = require('express');
 const bodyParser = require('body-parser');
-var User = require('../modals/user');
+var User = require('../models/user');
 const e = require('express');
 var router = express.Router();
 
