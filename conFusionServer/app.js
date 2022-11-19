@@ -57,14 +57,14 @@ function auth(req, res, next) {
   console.log(req.session);
 
   if (!req.session.user) {
-    let err = new Error('You are not authenticated!');
-    err.status = 401;
+    var err = new Error('You are not authenticated!');
+    err.status = 403;
     return next(err);
   } else {
     if (req.session.user === 'authenticated') {
       next();
     } else {
-      let err = new Error('You are not authenticated!');
+      var err = new Error('You are not authenticated!');
       err.status = 403;
       return next(err);
     }
