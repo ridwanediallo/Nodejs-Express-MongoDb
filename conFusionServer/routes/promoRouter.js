@@ -40,7 +40,7 @@ promoRouter
     res.statusCode = 403;
     res.end('PUT operation not supported on /promotions');
   })
-  .delete((req, res, next) => {
+  .delete(authenticate.verifyUser, (req, res, next) => {
     Promotions.remove({})
       .then(
         (resp) => {
